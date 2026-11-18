@@ -73,8 +73,7 @@ header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-
 .footer a:hover{text-decoration:underline}
 .footer-credit{border-top:1px solid #101925;margin-top:56px;padding-top:31px;line-height:1.25}
 .footer-credit a{display:inline-block;margin-top:12px}
-#agendamento .consulta-formulario{max-width:650px;margin:58px auto 0;padding:clamp(20px,5vw,38px);border:1px solid var(--gold);border-radius:12px}
-#agendamento .consulta-formulario h3{font-family:Georgia,serif;font-size:clamp(24px,5vw,35px);font-weight:400;color:var(--gold);margin-bottom:12px}
+#agendamento .consulta-formulario{max-width:580px;margin:0 auto}
 #agendamento .consulta-formulario p{font-size:14px;margin-bottom:20px}
 #agendamento .consulta-formulario form{display:grid;gap:14px}
 #agendamento .consulta-formulario label{display:grid;gap:5px;font-size:14px}
@@ -97,7 +96,7 @@ header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-
   font-display: swap;
 }
 body, button, input, select, textarea, h1, h2, h3,
-#servicos h2, #agendamento .consulta-formulario h3,
+#servicos h2,
 .appointment h2, .location h2, .address-card h3, .care blockquote {
   font-family: Bronova, Arial, sans-serif;
 }
@@ -184,8 +183,6 @@ header nav a {
 #dra-natalia .doctor-bio { padding-block: clamp(30px, 5vw, 48px) 18px; }
 #agendamento { padding-block: clamp(32px, 6vw, 56px); }
 #agendamento h2 { margin-bottom: 22px; }
-#agendamento > .wrap > p { margin-bottom: 20px; }
-#agendamento .consulta-formulario { margin-top: 28px; }
 #localizacao { padding-block: clamp(34px, 6vw, 58px); }
 #localizacao .wrap {
   display: grid;
@@ -240,13 +237,24 @@ header nav a {
 <p>Na Unora, essa visão se traduz em uma experiência em que cada paciente é ouvida, orientada e acompanhada de forma próxima — desde a primeira avaliação até os próximos passos do cuidado.</p>
 <p>Mais do que indicar um procedimento, a Dra. Natália busca compreender o que existe por trás da necessidade de cada paciente.</p>
 </div></div>
-</section><section class="section appointment" id="agendamento"><div class="wrap"><h2>Agendar consulta</h2><p>Escolha a forma que melhor se adequa ao seu ritmo de vida, agende sua consulta agora.</p><a class="button" href="https://wa.me/5521977210359?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Unora%20Clinic." target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span> Agendar</a>
+</section><section class="section appointment" id="agendamento"><div class="wrap"><h2 id="solicitar-consulta">Agendar consulta</h2>
 <div class="consulta-formulario">
-  <h3 id="solicitar-consulta">Solicitar consulta</h3>
   <p>Preencha seus dados para abrir o WhatsApp. Envie a mensagem por lá e aguarde a confirmação da equipe.</p>
   <form aria-labelledby="solicitar-consulta">
     <label>Seu nome
       <input name="nome" autocomplete="name" required maxlength="100" pattern=".*\S.*">
+    </label>
+
+    <label>Sobre o que será a consulta?
+      <select name="assunto">
+        <option value="">Ainda não sei</option>
+        <option>Saúde e Metabolismo</option>
+        <option>Saúde Hormonal</option>
+        <option>Composição Corporal</option>
+        <option>Estética Corporal</option>
+        <option>Abordagens Complementares</option>
+        <option>GoldIncision</option>
+      </select>
     </label>
     <label>Dia de preferência (opcional)
       <input type="date" name="dia">
@@ -275,11 +283,13 @@ header nav a {
     const data = new FormData(form);
     const name = data.get('nome').trim();
     const day = data.get('dia');
+    const topic = data.get('assunto');
     const lines = [
       'Olá! Gostaria de solicitar uma consulta na Unora Clinic.',
       'Nome: ' + name,
       'Período: ' + data.get('periodo')
     ];
+    if (topic) lines.push('Assunto da consulta: ' + topic);
     if (day) lines.push('Dia de preferência: ' + day.split('-').reverse().join('/'));
     const url = new URL('https://wa.me/5521977210359');
     url.searchParams.set('text', lines.join('\n'));
