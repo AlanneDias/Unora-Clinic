@@ -602,6 +602,21 @@ main .button {
 /* Serviços: cards com contorno dourado sobre o fundo azul escuro */
 #servicos .service-cards .service { border: 1px solid #b78f5c55; }
 
+/* Agendamento: campos sem contorno e campo de data ajustado ao iPhone */
+#agendamento .consulta-formulario input:not([type="checkbox"]),
+#agendamento .consulta-formulario select { border: 0; }
+#agendamento .consulta-formulario input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+}
+#agendamento .consulta-formulario input[type="date"]::-webkit-date-and-time-value { text-align: left; margin: 0; }
+#agendamento .consulta-preferencia > label { min-width: 0; }
+
 /* Mobile: nenhuma fonte acima de 15px */
 @media (max-width: 700px) {
   :root { --texto-titulo: 15px; }
@@ -674,6 +689,7 @@ main .button {
         <label><input type="checkbox" name="assunto" value="Estética Corporal"> Estética Corporal</label>
         <label><input type="checkbox" name="assunto" value="Abordagens Complementares"> Abordagens Complementares</label>
         <label><input type="checkbox" name="assunto" value="GoldIncision"> GoldIncision</label>
+        <label><input type="checkbox" name="assunto" value="Outros"> Outros</label>
       </div>
     </fieldset>
     <div class="consulta-preferencia">
