@@ -314,6 +314,35 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
   header nav { gap: 7px; padding-inline: 10px; }
   #clinica .intro { grid-template-columns: 48px minmax(0, 1fr); }
 }
+
+#avaliacoes {
+  background: #0f192a;
+  padding-block: clamp(34px, 6vw, 62px);
+  text-align: center;
+}
+#avaliacoes .wrap { width: min(90%, 1000px); }
+#avaliacoes h2 { color: var(--gold); margin-bottom: 12px; }
+#avaliacoes .avaliacoes-aviso { font-size: var(--texto-apoio); margin: 0 0 24px; }
+.avaliacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+.avaliacoes-grid figure {
+  display: grid;
+  align-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 20px;
+  background: var(--navy);
+  border-top: 2px solid var(--gold);
+}
+.avaliacoes-grid blockquote { margin: 0; }
+.avaliacoes-grid figcaption { color: var(--gold); font-size: var(--texto-apoio); }
+@media (max-width: 700px) {
+  .avaliacoes-grid { grid-template-columns: 1fr; }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -340,7 +369,27 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 <p>Na Unora, essa visão se traduz em uma experiência em que cada paciente é ouvida, orientada e acompanhada de forma próxima — desde a primeira avaliação até os próximos passos do cuidado.</p>
 <p>Mais do que indicar um procedimento, a Dra. Natália busca compreender o que existe por trás da necessidade de cada paciente.</p>
 </div></div>
-</section><section class="section appointment" id="agendamento"><div class="wrap"><h2 id="solicitar-consulta">Agendar consulta</h2>
+</section><section class="avaliacoes" id="avaliacoes" aria-labelledby="titulo-avaliacoes">
+  <div class="wrap">
+    <h2 id="titulo-avaliacoes">Avaliações</h2>
+    <p class="avaliacoes-aviso">Exemplos fictícios para ilustrar esta seção.</p>
+    <div class="avaliacoes-grid">
+      <figure>
+        <blockquote>“Tive tempo para explicar minhas dúvidas e entender como seria o acompanhamento.”</blockquote>
+        <figcaption>Exemplo fictício</figcaption>
+      </figure>
+      <figure>
+        <blockquote>“A equipe explicou como chegar à clínica e o que levar para a primeira consulta.”</blockquote>
+        <figcaption>Exemplo fictício</figcaption>
+      </figure>
+      <figure>
+        <blockquote>“Gostei de receber orientações claras sobre os próximos passos antes de sair da consulta.”</blockquote>
+        <figcaption>Exemplo fictício</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<section class="section appointment" id="agendamento"><div class="wrap"><h2 id="solicitar-consulta">Agendar consulta</h2>
 <div class="consulta-formulario">
   <p>Preencha seus dados para abrir o WhatsApp. Envie a mensagem por lá e aguarde a confirmação da equipe.</p>
   <form aria-labelledby="solicitar-consulta">
