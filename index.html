@@ -8,12 +8,12 @@
 html{scroll-padding-top:65px}
 body{background:var(--navy)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-header{position:fixed;top:clamp(13px,3.7vh,32px);left:50%;right:auto;transform:translateX(-50%);width:min(90%,520px);z-index:30}
+header{position:fixed;top:clamp(13px,3.7vh,32px);left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);z-index:30}
 header nav{position:static;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;width:100%;align-items:center;background:var(--gold);border:0;border-radius:99px;padding:0;color:#101921;text-align:center}
 header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-size:clamp(8px,1.7vw,11px);letter-spacing:0;line-height:1}
 .hero{display:block;height:100svh;min-height:640px;max-height:none}
 .hero>img{object-position:left 18%}
-.hero:after{background:rgba(21,34,52,.65)}
+.hero:after{background:linear-gradient(180deg,rgba(16,45,83,.60),rgba(14,41,80,.58) 58%,rgba(15,36,66,.80))}
 .hero-inner{position:absolute;inset:auto 0 10%;width:min(88%,730px);margin-inline:auto;padding:0;text-align:center}
 .hero h1{max-width:none;margin:0}
 .hero-logo{width:min(80%,565px);margin:0 auto}
@@ -109,8 +109,8 @@ body, button, input, select, textarea, h1, h2, h3,
 header nav {
   display: flex;
   justify-content: center;
-  gap: clamp(10px, 4vw, 48px);
-  padding-inline: 10px;
+  gap: clamp(9px, 2.5vw, 25px);
+  padding-inline: clamp(12px, 2.5vw, 23px);
 }
 header nav a {
   flex: 0 1 auto;
