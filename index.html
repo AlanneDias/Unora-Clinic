@@ -175,7 +175,7 @@ header nav a {
 
 /* Ritmo vertical e mapa */
 #clinica, #servicos { min-height: 0; padding-block: clamp(34px, 6vw, 62px); }
-#servicos { background: #0f192a; }
+#servicos { background: #0f192a; padding-top: clamp(24px, 3vw, 34px); }
 #servicos .section-head { text-align: center; }
 #servicos h2 { margin-bottom: clamp(20px, 4vw, 40px); }
 #servicos .section-head { margin-bottom: 18px; }
@@ -373,14 +373,15 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
   padding: 0 14px 14px;
 }
 #servicos .service-cards .service-content p:last-child { margin-bottom: 0; }
-@media (min-width: 1000px) {
+@media (min-width: 1160px) {
   #servicos .service-cards {
     display: flex;
     align-items: stretch;
     min-height: 245px;
+    overflow-x: auto;
   }
   #servicos .service-cards .service { flex: 1 1 0; width: auto; }
-  #servicos .service-cards .service[open] { flex-grow: 2.94; min-width: 200px; }
+  #servicos .service-cards .service[open] { flex-grow: 2.94; min-width: 180px; }
   #servicos .service-cards .service:not([open]) { min-width: max-content; }
   #servicos .service-cards .service:not([open]) summary {
     display: block;
