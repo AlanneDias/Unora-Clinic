@@ -11,10 +11,13 @@ body{background:var(--navy)}
 header {
   position: fixed;
   top: clamp(14px, 3vh, 28px);
-  inset-inline: 0;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  width: auto;
+  width: max-content;
+  max-width: calc(100% - 24px);
   z-index: 30;
   pointer-events: none;
 }
@@ -117,8 +120,8 @@ body, button, input, select, textarea, h1, h2, h3,
 header nav {
   display: flex;
   justify-content: center;
-  width: fit-content;
-  max-width: calc(100% - 24px);
+  width: auto;
+  max-width: 100%;
   gap: clamp(9px, 2.2vw, 22px);
   padding-inline: clamp(12px, 2vw, 20px);
   pointer-events: auto;
