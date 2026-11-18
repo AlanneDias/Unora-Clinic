@@ -420,7 +420,7 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
     min-height: 245px;
   }
   #servicos .service-cards .service { flex: 1 1 0; width: auto; }
-  #servicos .service-cards .service[open] { flex: 0 0 37%; }
+  #servicos .service-cards .service[open] { flex-grow: 2.94; }
   #servicos .service-cards .service:not([open]) summary {
     display: block;
     height: 100%;
@@ -457,6 +457,19 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
   letter-spacing: .075em;
   text-transform: uppercase;
   color: var(--lightgold);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #servicos .service-cards .service {
+    transition: background-color 180ms ease, flex-grow 250ms ease;
+  }
+  #servicos .service-cards .service[open] .service-content {
+    animation: unora-servico-entrada 200ms ease-out both;
+  }
+}
+@keyframes unora-servico-entrada {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
