@@ -177,11 +177,10 @@ header nav a {
 #clinica, #servicos { min-height: 0; padding-block: clamp(34px, 6vw, 62px); }
 #servicos { background: #0f192a; }
 #servicos .section-head { text-align: center; }
-#servicos .section-head p { max-width: 66ch; margin-inline: auto; text-wrap: pretty; }
 #servicos h2 { margin-bottom: clamp(20px, 4vw, 40px); }
 #servicos .section-head { margin-bottom: 18px; }
 #servicos summary { min-height: 44px; padding-block: 12px; }
-#dra-natalia { padding-top: 24px; }
+#dra-natalia { padding-top: 0; }
 #dra-natalia .doctor-bio { padding-block: clamp(30px, 5vw, 48px) 18px; }
 #agendamento { padding-block: clamp(32px, 6vw, 56px); }
 #agendamento h2 { margin-bottom: 22px; }
@@ -266,7 +265,7 @@ body h1, body h2, body h3, .hero h1,
   line-height: 1.15;
   text-wrap: balance;
 }
-main p, .hero p, #clinica p, #servicos .section-head p,
+main p, .hero p, #clinica p, 
 #servicos .service-content p, #servicos summary,
 #dra-natalia .doctor-bio p, #agendamento .consulta-formulario p,
 #agendamento .consulta-formulario label, #agendamento .consulta-assuntos legend,
@@ -337,8 +336,8 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 /* Acordeão de serviços */
 #servicos .service-cards {
   display: grid;
-  gap: 8px;
-  margin-top: 26px;
+  gap: 4px;
+  margin-top: 20px;
 }
 #servicos .service-cards .service {
   width: 100%;
@@ -375,26 +374,27 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
   padding: 0 14px 14px;
 }
 #servicos .service-cards .service-content p:last-child { margin-bottom: 0; }
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   #servicos .service-cards {
     display: flex;
     align-items: stretch;
     min-height: 245px;
   }
   #servicos .service-cards .service { flex: 1 1 0; width: auto; }
-  #servicos .service-cards .service[open] { flex-grow: 2.94; }
+  #servicos .service-cards .service[open] { flex-grow: 2.94; min-width: 200px; }
+  #servicos .service-cards .service:not([open]) { min-width: max-content; }
   #servicos .service-cards .service:not([open]) summary {
     display: block;
     height: 100%;
     padding-bottom: 54px;
-    padding-inline: 10px;
+    padding-inline: 8px;
     font-size: var(--texto-leitura);
-    hyphens: auto;
+    white-space: nowrap;
   }
   #servicos .service-cards .service:not([open]) summary::after {
     position: absolute;
     bottom: 14px;
-    left: 10px;
+    left: 8px;
     margin: 0;
   }
 }
@@ -413,8 +413,8 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 #servicos .service-cards .service-content p {
   color: var(--text);
   font-size: var(--texto-apoio);
-  line-height: 1.65;
-  margin-bottom: 10px;
+  line-height: 1.45;
+  margin-bottom: 8px;
 }
 #servicos .service-cards .service-content .sub {
   font-size: var(--texto-apoio);
@@ -476,7 +476,7 @@ main .button {
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
 <section class="section" id="clinica"><div class="wrap intro"><img class="symbol" src="assets/simbolo.png" alt="Símbolo Unora" loading="lazy"><div><h2 class="sr-only">Clínica</h2><p>A Unora Clínica nasceu com a proposta de oferecer um cuidado médico que considera o corpo em sua complexidade.</p><p>Saúde metabólica, hormônios, composição corporal e estética estão relacionados e, por isso, são compreendidos de forma integrada dentro da clínica.</p><p>Essa visão reúne conhecimento médico e proximidade em uma experiência de cuidado atenta à história, às necessidades e ao momento de vida de cada paciente.</p><p>Mais do que reunir diferentes especialidades e procedimentos, a Unora busca construir uma relação em que medicina e cuidado caminham juntos, com atenção em cada etapa.</p></div></div></section>
-<section class="section services" id="servicos"><div class="wrap"><div class="section-head"><h2>Serviços da Unora</h2><p>A atuação da Unora reúne diferentes frentes da medicina relacionadas à saúde, ao metabolismo, aos hormônios e à composição corporal.</p></div>
+<section class="section services" id="servicos"><div class="wrap"><div class="section-head"><h2>Serviços da Unora</h2></div>
 <div class="service-cards">
 <details class="service" name="unora-servicos" open><summary><span>Saúde e Metabolismo</span></summary><div class="service-content"><p class="sub">Nutrologia e Endocrinologia · Medicina preventiva e longevidade</p><p>Acompanhamento voltado à relação entre metabolismo, hormônios, alimentação e saúde, com atenção à prevenção e à qualidade de vida ao longo do tempo.</p></div></details>
 <details class="service" name="unora-servicos"><summary><span>Saúde Hormonal</span></summary><div class="service-content"><p class="sub">Avaliação hormonal · Reposição hormonal</p><p>Cuidado direcionado às alterações hormonais e às diferentes fases da vida da mulher, incluindo avaliação e acompanhamento da reposição hormonal quando indicada.</p></div></details>
