@@ -667,6 +667,20 @@ header nav a:hover { color: #fff; }
 #clinica .intro p, .avaliacoes-grid blockquote, .avaliacoes-grid p { text-align: left; }
 #localizacao .address-card { padding-inline: var(--margem-lateral); }
 
+/* Largura fixa: todas as seções usam a mesma coluna de conteúdo */
+#clinica .intro, #servicos .wrap, #avaliacoes .wrap, #agendamento > .wrap,
+.footer .wrap, #dra-natalia .doctor-bio .wrap, #dra-natalia .doctor-profile .wrap {
+  width: min(calc(100% - 2 * var(--margem-lateral)), var(--largura-conteudo));
+  max-width: none;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+#clinica .intro > div { max-width: none; }
+@media (max-width: 700px) {
+  :root { --margem-lateral: 0.5cm; }
+  .hero-inner { width: calc(100% - 2 * var(--margem-lateral)); }
+}
+
 /* Mobile: nenhuma fonte acima de 15px */
 @media (max-width: 700px) {
   :root { --texto-titulo: 15px; }
