@@ -656,6 +656,12 @@ header nav a:hover { color: #fff; }
 #dra-natalia .doctor-bio { background: var(--navy); }
 #dra-natalia .doctor-profile .instagram { background: var(--deep); }
 
+/* Clínica: símbolo centralizado no celular */
+@media (max-width: 700px) {
+  #clinica .intro { grid-template-columns: 1fr; justify-items: center; gap: 28px; }
+  #clinica .symbol { width: 84px; margin: 0 auto; }
+}
+
 /* Mobile: nenhuma fonte acima de 15px */
 @media (max-width: 700px) {
   :root { --texto-titulo: 15px; }
