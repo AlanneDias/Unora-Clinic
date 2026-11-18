@@ -681,6 +681,10 @@ header nav a:hover { color: #fff; }
   .hero-inner { width: calc(100% - 2 * var(--margem-lateral)); }
 }
 
+/* Depoimentos: foto e texto alinhados no topo, nome no rodapé do card */
+.avaliacoes-grid figure { display: flex; flex-direction: column; align-items: flex-start; }
+.avaliacoes-grid figcaption { margin-top: auto; }
+
 /* Mobile: nenhuma fonte acima de 15px */
 @media (max-width: 700px) {
   :root { --texto-titulo: 15px; }
@@ -722,19 +726,19 @@ header nav a:hover { color: #fff; }
     <h2 id="titulo-avaliacoes" class="sr-only">Avaliações</h2>
     <div class="avaliacoes-grid">
       <figure>
-        <span class="avaliacao-foto" aria-hidden="true"></span>
-        <blockquote>“Tive tempo para explicar minhas dúvidas e entender como seria o acompanhamento.”</blockquote>
-        <figcaption>Exemplo fictício</figcaption>
+        <img class="avaliacao-foto" src="assets/avaliacao-leonicia.jpg" alt="" loading="lazy" width="52" height="52">
+        <blockquote>“Desde que comecei a me tratar com minha nutróloga, Dra. Natália Bandeira, minha saúde física e mental melhorou significativamente. Sua orientação e prescrição especializada e abrangente para nutrição me deixaram mais equilibrada, focada e energizada. Sou imensamente grata pelo impacto positivo em minha vida!”</blockquote>
+        <figcaption>Leonicia Coelho</figcaption>
       </figure>
       <figure>
-        <span class="avaliacao-foto" aria-hidden="true"></span>
-        <blockquote>“A equipe explicou como chegar à clínica e o que levar para a primeira consulta.”</blockquote>
-        <figcaption>Exemplo fictício</figcaption>
+        <img class="avaliacao-foto" src="assets/avaliacao-rafa.jpg" alt="" loading="lazy" width="52" height="52">
+        <blockquote>“Eu já me trato com a Dr. Nathalia desde 2020. Minha vida mudou!! Eu estava sem ânimo, acordava cansada e sentia q o sono não era reparador.<br>Hoje eu durmo muito bem, tenho ânimo e vontade pra malhar todos os dias, meu corpo mudou, meu humor mudou!<br>Enfim só agradecer à essa médica competente e comprometida com o propósito de transformar vidas!”</blockquote>
+        <figcaption>Rafa Curione</figcaption>
       </figure>
       <figure>
-        <span class="avaliacao-foto" aria-hidden="true"></span>
-        <blockquote>“Gostei de receber orientações claras sobre os próximos passos antes de sair da consulta.”</blockquote>
-        <figcaption>Exemplo fictício</figcaption>
+        <img class="avaliacao-foto" src="assets/avaliacao-regina.jpg" alt="" loading="lazy" width="52" height="52">
+        <blockquote>“Excelente Dra. muito solicita em ouvir e compreender o paciente. Está cuidando de meus problemas de saúde (relacionado a menopausa) a pouco tempo, e já estou sentindo melhoras. Recomendo!”</blockquote>
+        <figcaption>Regina Cardoso</figcaption>
       </figure>
     </div>
   </div>
