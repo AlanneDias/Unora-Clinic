@@ -343,6 +343,32 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 @media (max-width: 700px) {
   .avaliacoes-grid { grid-template-columns: 1fr; }
 }
+
+#perguntas {
+  border-top: 0;
+  padding-block: clamp(34px, 6vw, 58px);
+}
+#perguntas .wrap::before { content: none; }
+#perguntas h2 {
+  color: var(--gold);
+  margin-bottom: 24px;
+  text-align: center;
+}
+#perguntas details { border-top: 1px solid #b78f5c40; }
+#perguntas details:last-child { border-bottom: 1px solid #b78f5c40; }
+#perguntas summary { min-height: 48px; padding-block: 12px; }
+#perguntas summary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  margin-right: 5px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+#perguntas details[open] summary::after { transform: rotate(225deg); }
+#perguntas .service-content p { margin: 0; }
+#perguntas .service-content a { text-decoration: underline; text-underline-offset: 3px; }
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -456,10 +482,31 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 </div>
 <iframe class="location-map" title="Mapa da UNORA Clinic, Rua Miguel de Frias, 206, Icaraí" src="https://maps.google.com/maps?q=Rua%20Miguel%20de%20Frias%2C%20206%2C%20Icara%C3%AD%2C%20Niter%C3%B3i%2C%20RJ&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 </section>
-<section class="faq" aria-label="Perguntas frequentes"><div class="wrap">
-<details class="service"><summary>Por que escolher Unora e não outra clínica?</summary><div class="service-content"><p>A Unora integra saúde metabólica, hormônios, composição corporal e estética em um cuidado que considera a história e as necessidades de cada paciente.</p></div></details>
-<details class="service"><summary>Quem é Dra. Natália? Qual é sua especialidade?</summary><div class="service-content"><p>A Dra. Natália Bandeira é médica pós-graduada em Nutrologia e Endocrinologia, fundadora e diretora clínica da Unora.</p></div></details>
-</div></section>
+<section class="faq" id="perguntas" aria-labelledby="titulo-perguntas">
+  <div class="wrap">
+    <h2 id="titulo-perguntas">Perguntas frequentes</h2>
+    <details class="service">
+      <summary>Como agendar uma consulta?</summary>
+      <div class="service-content"><p>Preencha o <a href="#agendamento">formulário de agendamento</a> e envie a mensagem pelo WhatsApp. A equipe da Unora confirma a disponibilidade com você.</p></div>
+    </details>
+    <details class="service">
+      <summary>Preciso escolher o assunto da consulta?</summary>
+      <div class="service-content"><p>Você pode selecionar uma ou mais áreas de interesse ou deixar o campo em branco se ainda tiver dúvidas.</p></div>
+    </details>
+    <details class="service">
+      <summary>Onde fica a Unora Clinic?</summary>
+      <div class="service-content"><p>Na Rua Miguel de Frias, 206, sala 601, em Icaraí, Niterói. Consulte o <a href="#localizacao">mapa e as rotas</a>.</p></div>
+    </details>
+    <details class="service">
+      <summary>Como é o atendimento na Unora?</summary>
+      <div class="service-content"><p>A clínica considera a relação entre saúde metabólica, hormônios, composição corporal e estética. <a href="#clinica">Conheça a abordagem da Unora</a>.</p></div>
+    </details>
+    <details class="service">
+      <summary>Quem é a Dra. Natália Bandeira?</summary>
+      <div class="service-content"><p>É médica, pós-graduada em Nutrologia e Endocrinologia, fundadora e diretora clínica da Unora. <a href="#dra-natalia">Conheça a Dra. Natália</a>.</p></div>
+    </details>
+  </div>
+</section>
 </main>
 <footer class="footer"><div class="wrap">
 <p>Unora Clinic<br>Saúde Integrada, Endocrinologia, Nutrologia e Estética Avançada.</p>
