@@ -104,6 +104,36 @@ body, button, input, select, textarea, h1, h2, h3,
 .doctor-profile h2 {
   font-family: Bacalisties, cursive;
 }
+
+/* Navegação e apresentação da clínica */
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 4vw, 48px);
+  padding-inline: 10px;
+}
+header nav a {
+  flex: 0 1 auto;
+  min-height: 26px;
+  white-space: nowrap;
+}
+#clinica .intro {
+  display: grid;
+  grid-template-columns: minmax(44px, 150px) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(14px, 5vw, 64px);
+  width: min(90%, 1000px);
+}
+#clinica .symbol {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  #clinica .intro {
+    grid-template-columns: clamp(44px, 16vw, 96px) minmax(0, 1fr);
+  }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
