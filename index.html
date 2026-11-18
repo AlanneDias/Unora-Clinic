@@ -192,21 +192,30 @@ header nav a {
 #dra-natalia .doctor-bio { padding-block: clamp(30px, 5vw, 48px) 18px; }
 #agendamento { padding-block: clamp(32px, 6vw, 56px); }
 #agendamento h2 { margin-bottom: 22px; }
-#localizacao { padding-block: clamp(34px, 6vw, 58px); }
+#localizacao { padding: 0; }
 #localizacao .wrap {
   display: grid;
+  width: 100%;
+  max-width: none;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  gap: clamp(18px, 5vw, 54px);
 }
-#localizacao .address-card { justify-self: center; }
+#localizacao .address-card {
+  width: 100%;
+  padding: clamp(28px, 6vw, 60px) 16px;
+}
 #localizacao h2, #localizacao .address-card p { margin-bottom: 20px; }
+#localizacao h2 {
+  white-space: nowrap;
+  font-size: clamp(32px, 5vw, 48px);
+}
+#localizacao .address-card .button { max-width: 211px; }
 #localizacao .location-map {
   display: block;
   width: 100%;
-  height: clamp(245px, 35vw, 340px);
-  border: 1px solid #b78f5c80;
-  border-radius: 10px;
+  height: 100%;
+  min-height: clamp(300px, 42vw, 460px);
+  border: 0;
 }
 .faq { border-top-width: clamp(18px, 4vw, 42px); }
 .faq .wrap::before { margin-bottom: 8px; }
