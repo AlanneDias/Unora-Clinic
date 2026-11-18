@@ -259,6 +259,61 @@ header nav a {
 @media (max-width: 480px) {
   #agendamento .consulta-assuntos > div { grid-template-columns: 1fr; }
 }
+
+/* Escala tipográfica e alinhamento */
+:root {
+  --texto-apoio: 11px;
+  --texto-leitura: 15px;
+  --texto-titulo: 40px;
+}
+body, button, input, select, textarea {
+  font-size: var(--texto-leitura);
+  line-height: 1.55;
+}
+body h1, body h2, body h3,
+#servicos h2, #dra-natalia .doctor-profile h2, #localizacao h2 {
+  font-size: var(--texto-titulo);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+main p, .hero p, #clinica p, #servicos .section-head p,
+#servicos .service-content p, #servicos summary,
+#dra-natalia .doctor-bio p, #agendamento .consulta-formulario p,
+#agendamento .consulta-formulario label, #agendamento .consulta-assuntos legend,
+#localizacao .address-card p, .faq summary, .faq .service-content p,
+main .button {
+  font-size: var(--texto-leitura);
+  line-height: 1.55;
+}
+header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
+.footer p, .footer-credit {
+  font-size: var(--texto-apoio);
+  line-height: 1.5;
+}
+#clinica .intro > div, #dra-natalia .doctor-bio .wrap {
+  width: 100%;
+  max-width: 76ch;
+  justify-self: center;
+}
+#clinica .intro p:last-child, #dra-natalia .doctor-bio p:last-child {
+  margin-bottom: 0;
+}
+#dra-natalia .doctor-bio .wrap {
+  width: min(90%, 76ch);
+}
+#servicos .section-head, #agendamento h2, #localizacao h2 {
+  margin-bottom: 24px;
+}
+#servicos h2 { margin-bottom: 16px; }
+#servicos .service, .faq .service { text-align: left; }
+#servicos summary { min-height: 44px; }
+#agendamento .consulta-formulario button { justify-self: center; }
+.faq .wrap { width: min(90%, 760px); }
+.faq summary, .faq .service-content { padding-inline: 0; }
+@media (max-width: 380px) {
+  header nav { gap: 7px; padding-inline: 10px; }
+  #clinica .intro { grid-template-columns: 48px minmax(0, 1fr); }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
