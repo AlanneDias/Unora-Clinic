@@ -220,6 +220,34 @@ header nav a {
   white-space: nowrap;
   font-size: clamp(10px, 3.2vw, 13px);
 }
+
+#agendamento .consulta-assuntos { margin: 0; padding: 0; border: 0; min-width: 0; }
+#agendamento .consulta-assuntos legend { padding: 0; font-size: 14px; }
+#agendamento .consulta-assuntos > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 16px;
+  margin-top: 5px;
+}
+#agendamento .consulta-assuntos label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  cursor: pointer;
+}
+#agendamento .consulta-assuntos input {
+  width: 17px;
+  height: 17px;
+  min-height: 0;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--gold);
+}
+@media (max-width: 480px) {
+  #agendamento .consulta-assuntos > div { grid-template-columns: 1fr; }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -254,17 +282,17 @@ header nav a {
       <input name="nome" autocomplete="name" required maxlength="100" pattern=".*\S.*">
     </label>
 
-    <label>Sobre o que será a consulta?
-      <select name="assunto">
-        <option value="">Ainda não sei</option>
-        <option>Saúde e Metabolismo</option>
-        <option>Saúde Hormonal</option>
-        <option>Composição Corporal</option>
-        <option>Estética Corporal</option>
-        <option>Abordagens Complementares</option>
-        <option>GoldIncision</option>
-      </select>
-    </label>
+    <fieldset class="consulta-assuntos">
+      <legend>Sobre o que será a consulta? (opcional)</legend>
+      <div>
+        <label><input type="checkbox" name="assunto" value="Saúde e Metabolismo"> Saúde e Metabolismo</label>
+        <label><input type="checkbox" name="assunto" value="Saúde Hormonal"> Saúde Hormonal</label>
+        <label><input type="checkbox" name="assunto" value="Composição Corporal"> Composição Corporal</label>
+        <label><input type="checkbox" name="assunto" value="Estética Corporal"> Estética Corporal</label>
+        <label><input type="checkbox" name="assunto" value="Abordagens Complementares"> Abordagens Complementares</label>
+        <label><input type="checkbox" name="assunto" value="GoldIncision"> GoldIncision</label>
+      </div>
+    </fieldset>
     <label>Dia de preferência (opcional)
       <input type="date" name="dia">
     </label>
@@ -292,13 +320,13 @@ header nav a {
     const data = new FormData(form);
     const name = data.get('nome').trim();
     const day = data.get('dia');
-    const topic = data.get('assunto');
+    const topics = data.getAll('assunto');
     const lines = [
       'Olá! Gostaria de solicitar uma consulta na Unora Clinic.',
       'Nome: ' + name,
       'Período: ' + data.get('periodo')
     ];
-    if (topic) lines.push('Assunto da consulta: ' + topic);
+    if (topics.length) lines.push('Assunto da consulta: ' + topics.join(', '));
     if (day) lines.push('Dia de preferência: ' + day.split('-').reverse().join('/'));
     const url = new URL('https://wa.me/5521977210359');
     url.searchParams.set('text', lines.join('\n'));
