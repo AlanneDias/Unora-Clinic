@@ -374,31 +374,6 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
   padding: 0 14px 14px;
 }
 #servicos .service-cards .service-content p:last-child { margin-bottom: 0; }
-@media (min-width: 1160px) {
-  #servicos .service-cards {
-    display: flex;
-    align-items: stretch;
-    min-height: 245px;
-    overflow-x: auto;
-  }
-  #servicos .service-cards .service { flex: 1 1 0; width: auto; }
-  #servicos .service-cards .service[open] { flex-grow: 2.94; min-width: 180px; }
-  #servicos .service-cards .service:not([open]) { min-width: max-content; }
-  #servicos .service-cards .service:not([open]) summary {
-    display: block;
-    height: 100%;
-    padding-bottom: 54px;
-    padding-inline: 8px;
-    font-size: var(--texto-leitura);
-    white-space: nowrap;
-  }
-  #servicos .service-cards .service:not([open]) summary::after {
-    position: absolute;
-    bottom: 14px;
-    left: 8px;
-    margin: 0;
-  }
-}
 
 #servicos .service-cards .service[open] summary {
   padding-block: 18px 12px;
@@ -426,7 +401,7 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 
 @media (prefers-reduced-motion: no-preference) {
   #servicos .service-cards .service {
-    transition: background-color 180ms ease, flex-grow 250ms ease;
+    transition: background-color 180ms ease;
   }
   #servicos .service-cards .service[open] .service-content {
     animation: unora-servico-entrada 200ms ease-out both;
