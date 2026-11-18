@@ -521,6 +521,33 @@ main .button {
 @media (max-width: 600px) {
   .footer-info { grid-template-columns: 1fr; gap: 18px; }
 }
+
+#agendamento h2 { font-family: Bacalisties, cursive; }
+#agendamento .consulta-formulario > p {
+  max-width: 48ch;
+  margin: 0 auto 26px;
+  text-align: center;
+  text-wrap: balance;
+}
+#agendamento .consulta-formulario form { gap: 18px; }
+#agendamento .consulta-preferencia {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espaco-controle);
+}
+#agendamento .consulta-assuntos > div { gap: 6px 12px; }
+#agendamento .consulta-assuntos label {
+  padding: 5px 8px;
+  border-radius: var(--raio-controle);
+  background: color-mix(in srgb, var(--text) 5%, transparent);
+}
+#agendamento .consulta-assuntos label:has(input:checked) {
+  background: color-mix(in srgb, var(--gold) 18%, transparent);
+}
+#agendamento .consulta-formulario button { margin-top: 4px; }
+@media (max-width: 480px) {
+  #agendamento .consulta-preferencia { grid-template-columns: 1fr; }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -591,16 +618,18 @@ main .button {
         <label><input type="checkbox" name="assunto" value="GoldIncision"> GoldIncision</label>
       </div>
     </fieldset>
-    <label>Dia de preferência (opcional)
-      <input type="date" name="dia">
-    </label>
-    <label>Período de preferência
-      <select name="periodo">
-        <option>Sem preferência</option>
-        <option>Manhã</option>
-        <option>Tarde</option>
-      </select>
-    </label>
+    <div class="consulta-preferencia">
+      <label>Dia de preferência (opcional)
+        <input type="date" name="dia">
+      </label>
+      <label>Período de preferência
+        <select name="periodo">
+          <option>Sem preferência</option>
+          <option>Manhã</option>
+          <option>Tarde</option>
+        </select>
+      </label>
+    </div>
     <button class="button" type="submit">Continuar para o WhatsApp</button>
   </form>
   <noscript><p><a href="https://wa.me/5521977210359">Fale com a clínica pelo WhatsApp</a>.</p></noscript>
