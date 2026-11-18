@@ -8,7 +8,7 @@
 html{scroll-padding-top:65px}
 body{background:var(--navy)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-header{position:fixed;top:clamp(13px,3.7vh,32px);left:50%;right:auto;transform:translateX(-50%);width:min(89%,1040px);z-index:30}
+header{position:fixed;top:clamp(13px,3.7vh,32px);left:50%;right:auto;transform:translateX(-50%);width:min(90%,520px);z-index:30}
 header nav{position:static;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;width:100%;align-items:center;background:var(--gold);border:0;border-radius:99px;padding:0;color:#101921;text-align:center}
 header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-size:clamp(8px,1.7vw,11px);letter-spacing:0;line-height:1}
 .hero{display:block;height:100svh;min-height:640px;max-height:none}
@@ -120,7 +120,7 @@ header nav a {
 #clinica .intro {
   display: grid;
   grid-template-columns: minmax(44px, 150px) minmax(0, 1fr);
-  align-items: start;
+  align-items: center;
   gap: clamp(14px, 5vw, 64px);
   width: min(90%, 1000px);
 }
@@ -188,7 +188,7 @@ header nav a {
 #localizacao { padding-block: clamp(34px, 6vw, 58px); }
 #localizacao .wrap {
   display: grid;
-  grid-template-columns: minmax(180px, .35fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   gap: clamp(18px, 5vw, 54px);
 }
