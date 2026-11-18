@@ -73,14 +73,14 @@ header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-
 .footer a:hover{text-decoration:underline}
 .footer-credit{border-top:1px solid #101925;margin-top:56px;padding-top:31px;line-height:1.25}
 .footer-credit a{display:inline-block;margin-top:12px}
-#servicos .consulta-formulario{max-width:650px;margin:58px auto 0;padding:clamp(20px,5vw,38px);border:1px solid var(--gold);border-radius:12px}
-#servicos .consulta-formulario h3{font-family:Georgia,serif;font-size:clamp(24px,5vw,35px);font-weight:400;color:var(--gold);margin-bottom:12px}
-#servicos .consulta-formulario p{font-size:14px;margin-bottom:20px}
-#servicos .consulta-formulario form{display:grid;gap:14px}
-#servicos .consulta-formulario label{display:grid;gap:5px;font-size:14px}
-#servicos .consulta-formulario input,#servicos .consulta-formulario select{width:100%;min-height:44px;padding:8px 12px;border:1px solid #a9a5a0;border-radius:5px;background:#fffaf2;color:#182637;font:inherit}
-#servicos .consulta-formulario button{justify-self:start;border:0;cursor:pointer;background:var(--gold);min-height:44px}
-#servicos .consulta-formulario :focus-visible{outline:2px solid var(--lightgold);outline-offset:3px}
+#agendamento .consulta-formulario{max-width:650px;margin:58px auto 0;padding:clamp(20px,5vw,38px);border:1px solid var(--gold);border-radius:12px}
+#agendamento .consulta-formulario h3{font-family:Georgia,serif;font-size:clamp(24px,5vw,35px);font-weight:400;color:var(--gold);margin-bottom:12px}
+#agendamento .consulta-formulario p{font-size:14px;margin-bottom:20px}
+#agendamento .consulta-formulario form{display:grid;gap:14px}
+#agendamento .consulta-formulario label{display:grid;gap:5px;font-size:14px}
+#agendamento .consulta-formulario input,#agendamento .consulta-formulario select{width:100%;min-height:44px;padding:8px 12px;border:1px solid #a9a5a0;border-radius:5px;background:#fffaf2;color:#182637;font:inherit}
+#agendamento .consulta-formulario button{justify-self:start;border:0;cursor:pointer;background:var(--gold);min-height:44px}
+#agendamento .consulta-formulario :focus-visible{outline:2px solid var(--lightgold);outline-offset:3px}
 
 @font-face {
   font-family: Bronova;
@@ -97,7 +97,7 @@ header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-
   font-display: swap;
 }
 body, button, input, select, textarea, h1, h2, h3,
-#servicos h2, #servicos .consulta-formulario h3,
+#servicos h2, #agendamento .consulta-formulario h3,
 .appointment h2, .location h2, .address-card h3, .care blockquote {
   font-family: Bronova, Arial, sans-serif;
 }
@@ -161,6 +161,18 @@ header nav a {
 #dra-natalia .doctor-profile .instagram {
   margin: 4px 0 0;
 }
+
+#agendamento .consulta-formulario {
+  text-align: left;
+}
+#agendamento .consulta-formulario p {
+  max-width: none;
+  margin-inline: 0;
+  line-height: 1.55;
+}
+#solicitar-consulta {
+  scroll-margin-top: 20px;
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -172,6 +184,22 @@ header nav a {
 <details class="service"><summary><span>Estética Corporal</span></summary><div class="service-content"><p class="sub">Harmonização corporal</p><p>Procedimentos voltados ao contorno corporal e ao tratamento de questões como gordura localizada e flacidez, conforme indicação e avaliação médica.</p></div></details>
 <details class="service"><summary><span>Abordagens Complementares</span></summary><div class="service-content"><p class="sub">Prática ortomolecular</p><p>Abordagem complementar ao cuidado médico, considerando aspectos nutricionais, metabólicos e bioquímicos.</p></div></details>
 <details class="service"><summary><span>GoldIncision</span></summary><div class="service-content"><p class="sub">Tratamento para celulite</p><p>O tratamento combina a ruptura das traves fibrosas com o estímulo de colágeno por bioestimulador.</p><p>A Dra. Natália Bandeira é licenciada para realizar a técnica. O planejamento é definido de forma individual, na avaliação médica.</p></div></details>
+</div></section>
+<section class="doctor" id="dra-natalia">
+<div class="doctor-profile">
+<img src="assets/dra-natalia.png" alt="Dra. Natália Bandeira" loading="lazy">
+<h2>Dra. Natália Bandeira</h2>
+<p>Médica | Fundadora e Diretora Clínica da Unora<br>CRM-RJ 52112779-9</p>
+<a class="instagram" href="https://www.instagram.com/dranataliabandeira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Dra. Natália Bandeira"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.5"/><path d="M18 6h.01" stroke-linecap="round"/></svg></a>
+</div>
+<div class="doctor-bio"><div class="wrap">
+<p>Médica pós-graduada em Nutrologia e Endocrinologia, Natália Bandeira é fundadora e diretora clínica da Unora.</p>
+<p>Sua forma de conduzir o cuidado parte de uma visão integrada da saúde: compreender o histórico de cada paciente, investigar o que está acontecendo e, a partir disso, definir os caminhos mais adequados.</p>
+<p>Ao longo de sua trajetória, aproximou cada vez mais a medicina daquilo que considera essencial no cuidado: conhecimento e individualização.</p>
+<p>Na Unora, essa visão se traduz em uma experiência em que cada paciente é ouvida, orientada e acompanhada de forma próxima — desde a primeira avaliação até os próximos passos do cuidado.</p>
+<p>Mais do que indicar um procedimento, a Dra. Natália busca compreender o que existe por trás da necessidade de cada paciente.</p>
+</div></div>
+</section><section class="section appointment" id="agendamento"><div class="wrap"><h2>Agendar consulta</h2><p>Escolha a forma que melhor se adequa ao seu ritmo de vida, agende sua consulta agora.</p><a class="button" href="https://wa.me/5521977210359?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Unora%20Clinic." target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span> Agendar</a>
 <div class="consulta-formulario">
   <h3 id="solicitar-consulta">Solicitar consulta</h3>
   <p>Preencha seus dados para abrir o WhatsApp. Envie a mensagem por lá e aguarde a confirmação da equipe.</p>
@@ -195,7 +223,7 @@ header nav a {
 </div>
 <script>
 (() => {
-  const form = document.querySelector('#servicos .consulta-formulario form');
+  const form = document.querySelector('#agendamento .consulta-formulario form');
   const date = form.elements.namedItem('dia');
   const today = new Date();
   const localDay = new Date(today.getTime() - today.getTimezoneOffset() * 60000);
@@ -219,21 +247,6 @@ header nav a {
 })();
 </script>
 </div></section>
-<section class="doctor" id="dra-natalia">
-<div class="doctor-profile">
-<img src="assets/dra-natalia.png" alt="Dra. Natália Bandeira" loading="lazy">
-<h2>Dra. Natália Bandeira</h2>
-<p>Médica | Fundadora e Diretora Clínica da Unora<br>CRM-RJ 52112779-9</p>
-<a class="instagram" href="https://www.instagram.com/dranataliabandeira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Dra. Natália Bandeira"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.5"/><path d="M18 6h.01" stroke-linecap="round"/></svg></a>
-</div>
-<div class="doctor-bio"><div class="wrap">
-<p>Médica pós-graduada em Nutrologia e Endocrinologia, Natália Bandeira é fundadora e diretora clínica da Unora.</p>
-<p>Sua forma de conduzir o cuidado parte de uma visão integrada da saúde: compreender o histórico de cada paciente, investigar o que está acontecendo e, a partir disso, definir os caminhos mais adequados.</p>
-<p>Ao longo de sua trajetória, aproximou cada vez mais a medicina daquilo que considera essencial no cuidado: conhecimento e individualização.</p>
-<p>Na Unora, essa visão se traduz em uma experiência em que cada paciente é ouvida, orientada e acompanhada de forma próxima — desde a primeira avaliação até os próximos passos do cuidado.</p>
-<p>Mais do que indicar um procedimento, a Dra. Natália busca compreender o que existe por trás da necessidade de cada paciente.</p>
-</div></div>
-</section><section class="section appointment" id="agendamento"><div class="wrap"><h2>Agendar consulta</h2><p>Escolha a forma que melhor se adequa ao seu ritmo de vida, agende sua consulta agora.</p><a class="button" href="https://wa.me/5521977210359?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Unora%20Clinic." target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span> Agendar</a></div></section>
 <section class="location" id="localizacao">
 <div class="wrap"><div class="address-card">
 <h2>Como Chegar</h2>
