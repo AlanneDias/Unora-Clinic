@@ -371,17 +371,85 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 #perguntas details[open] summary::after { transform: rotate(225deg); }
 #perguntas .service-content p { margin: 0; }
 #perguntas .service-content a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Acordeão de serviços */
+#servicos .service-cards {
+  display: grid;
+  gap: 8px;
+  margin-top: 26px;
+}
+#servicos .service-cards .service {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  background: var(--navy);
+  border: 1px solid #b78f5c55;
+  border-radius: 4px;
+}
+#servicos .service-cards .service[open] {
+  background: #22324a;
+  border-color: var(--gold);
+}
+#servicos .service-cards summary {
+  position: relative;
+  gap: 12px;
+  padding: 14px;
+  overflow-wrap: anywhere;
+}
+#servicos .service-cards summary::after,
+#servicos .service-cards details[open] summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: 0 0 0 auto;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-size: var(--texto-leitura);
+  line-height: 1;
+  transform: none;
+}
+#servicos .service-cards details[open] summary::after { content: "−"; }
+#servicos .service-cards .service-content {
+  padding: 0 14px 14px;
+}
+#servicos .service-cards .service-content p:last-child { margin-bottom: 0; }
+@media (min-width: 900px) {
+  #servicos .service-cards {
+    display: flex;
+    align-items: stretch;
+    min-height: 245px;
+  }
+  #servicos .service-cards .service { flex: 1 1 0; width: auto; }
+  #servicos .service-cards .service[open] { flex: 0 0 37%; }
+  #servicos .service-cards .service:not([open]) summary {
+    display: block;
+    height: 100%;
+    padding-bottom: 54px;
+    font-size: var(--texto-apoio);
+  }
+  #servicos .service-cards .service:not([open]) summary::after {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    margin: 0;
+  }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
 <section class="section" id="clinica"><div class="wrap intro"><img class="symbol" src="assets/simbolo.png" alt="Símbolo Unora" loading="lazy"><div><h2 class="sr-only">Clínica</h2><p>A Unora Clínica nasceu com a proposta de oferecer um cuidado médico que considera o corpo em sua complexidade.</p><p>Saúde metabólica, hormônios, composição corporal e estética estão relacionados e, por isso, são compreendidos de forma integrada dentro da clínica.</p><p>Essa visão reúne conhecimento médico e proximidade em uma experiência de cuidado atenta à história, às necessidades e ao momento de vida de cada paciente.</p><p>Mais do que reunir diferentes especialidades e procedimentos, a Unora busca construir uma relação em que medicina e cuidado caminham juntos, com atenção em cada etapa.</p></div></div></section>
 <section class="section services" id="servicos"><div class="wrap"><div class="section-head"><h2>Serviços da Unora</h2><p>A atuação da Unora reúne diferentes frentes da medicina relacionadas à saúde, ao metabolismo, aos hormônios e à composição corporal.</p></div>
-<details class="service"><summary><span>Saúde e Metabolismo</span></summary><div class="service-content"><p class="sub">Nutrologia e Endocrinologia · Medicina preventiva e longevidade</p><p>Acompanhamento voltado à relação entre metabolismo, hormônios, alimentação e saúde, com atenção à prevenção e à qualidade de vida ao longo do tempo.</p></div></details>
-<details class="service"><summary><span>Saúde Hormonal</span></summary><div class="service-content"><p class="sub">Avaliação hormonal · Reposição hormonal</p><p>Cuidado direcionado às alterações hormonais e às diferentes fases da vida da mulher, incluindo avaliação e acompanhamento da reposição hormonal quando indicada.</p></div></details>
-<details class="service"><summary><span>Composição Corporal</span></summary><div class="service-content"><p class="sub">Emagrecimento · Hipertrofia · Lipedema</p><p>Acompanhamento que considera os fatores metabólicos e hormonais envolvidos na composição corporal, na construção e preservação de massa muscular e nas particularidades do lipedema.</p></div></details>
-<details class="service"><summary><span>Estética Corporal</span></summary><div class="service-content"><p class="sub">Harmonização corporal</p><p>Procedimentos voltados ao contorno corporal e ao tratamento de questões como gordura localizada e flacidez, conforme indicação e avaliação médica.</p></div></details>
-<details class="service"><summary><span>Abordagens Complementares</span></summary><div class="service-content"><p class="sub">Prática ortomolecular</p><p>Abordagem complementar ao cuidado médico, considerando aspectos nutricionais, metabólicos e bioquímicos.</p></div></details>
-<details class="service"><summary><span>GoldIncision</span></summary><div class="service-content"><p class="sub">Tratamento para celulite</p><p>O tratamento combina a ruptura das traves fibrosas com o estímulo de colágeno por bioestimulador.</p><p>A Dra. Natália Bandeira é licenciada para realizar a técnica. O planejamento é definido de forma individual, na avaliação médica.</p></div></details>
+<div class="service-cards">
+<details class="service" name="unora-servicos" open><summary><span>Saúde e Metabolismo</span></summary><div class="service-content"><p class="sub">Nutrologia e Endocrinologia · Medicina preventiva e longevidade</p><p>Acompanhamento voltado à relação entre metabolismo, hormônios, alimentação e saúde, com atenção à prevenção e à qualidade de vida ao longo do tempo.</p></div></details>
+<details class="service" name="unora-servicos"><summary><span>Saúde Hormonal</span></summary><div class="service-content"><p class="sub">Avaliação hormonal · Reposição hormonal</p><p>Cuidado direcionado às alterações hormonais e às diferentes fases da vida da mulher, incluindo avaliação e acompanhamento da reposição hormonal quando indicada.</p></div></details>
+<details class="service" name="unora-servicos"><summary><span>Composição Corporal</span></summary><div class="service-content"><p class="sub">Emagrecimento · Hipertrofia · Lipedema</p><p>Acompanhamento que considera os fatores metabólicos e hormonais envolvidos na composição corporal, na construção e preservação de massa muscular e nas particularidades do lipedema.</p></div></details>
+<details class="service" name="unora-servicos"><summary><span>Estética Corporal</span></summary><div class="service-content"><p class="sub">Harmonização corporal</p><p>Procedimentos voltados ao contorno corporal e ao tratamento de questões como gordura localizada e flacidez, conforme indicação e avaliação médica.</p></div></details>
+<details class="service" name="unora-servicos"><summary><span>Abordagens Complementares</span></summary><div class="service-content"><p class="sub">Prática ortomolecular</p><p>Abordagem complementar ao cuidado médico, considerando aspectos nutricionais, metabólicos e bioquímicos.</p></div></details>
+<details class="service" name="unora-servicos"><summary><span>GoldIncision</span></summary><div class="service-content"><p class="sub">Tratamento para celulite</p><p>O tratamento combina a ruptura das traves fibrosas com o estímulo de colágeno por bioestimulador.</p><p>A Dra. Natália Bandeira é licenciada para realizar a técnica. O planejamento é definido de forma individual, na avaliação médica.</p></div></details>
+</div>
+
 </div></section>
 <section class="doctor" id="dra-natalia">
 <div class="doctor-profile">
