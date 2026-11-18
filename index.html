@@ -72,7 +72,16 @@ header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-
 .footer p{margin:0 0 18px}
 .footer a:hover{text-decoration:underline}
 .footer-credit{border-top:1px solid #101925;margin-top:56px;padding-top:31px;line-height:1.25}
-.footer-credit a{display:inline-block;margin-top:12px}</style></head><body>
+.footer-credit a{display:inline-block;margin-top:12px}
+#servicos .consulta-formulario{max-width:650px;margin:58px auto 0;padding:clamp(20px,5vw,38px);border:1px solid var(--gold);border-radius:12px}
+#servicos .consulta-formulario h3{font-family:Georgia,serif;font-size:clamp(24px,5vw,35px);font-weight:400;color:var(--gold);margin-bottom:12px}
+#servicos .consulta-formulario p{font-size:14px;margin-bottom:20px}
+#servicos .consulta-formulario form{display:grid;gap:14px}
+#servicos .consulta-formulario label{display:grid;gap:5px;font-size:14px}
+#servicos .consulta-formulario input,#servicos .consulta-formulario select{width:100%;min-height:44px;padding:8px 12px;border:1px solid #a9a5a0;border-radius:5px;background:#fffaf2;color:#182637;font:inherit}
+#servicos .consulta-formulario button{justify-self:start;border:0;cursor:pointer;background:var(--gold);min-height:44px}
+#servicos .consulta-formulario :focus-visible{outline:2px solid var(--lightgold);outline-offset:3px}
+</style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
 <section class="section" id="clinica"><div class="wrap intro"><img class="symbol" src="assets/simbolo.png" alt="Símbolo Unora" loading="lazy"><div><h2 class="sr-only">Clínica</h2><p>A Unora Clínica nasceu com a proposta de oferecer um cuidado médico que considera o corpo em sua complexidade.</p><p>Saúde metabólica, hormônios, composição corporal e estética estão relacionados e, por isso, são compreendidos de forma integrada dentro da clínica.</p><p>Essa visão reúne conhecimento médico e proximidade em uma experiência de cuidado atenta à história, às necessidades e ao momento de vida de cada paciente.</p><p>Mais do que reunir diferentes especialidades e procedimentos, a Unora busca construir uma relação em que medicina e cuidado caminham juntos, com atenção em cada etapa.</p></div></div></section>
@@ -82,7 +91,54 @@ header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-
 <details class="service"><summary><span>Composição Corporal</span></summary><div class="service-content"><p class="sub">Emagrecimento · Hipertrofia · Lipedema</p><p>Acompanhamento que considera os fatores metabólicos e hormonais envolvidos na composição corporal, na construção e preservação de massa muscular e nas particularidades do lipedema.</p></div></details>
 <details class="service"><summary><span>Estética Corporal</span></summary><div class="service-content"><p class="sub">Harmonização corporal</p><p>Procedimentos voltados ao contorno corporal e ao tratamento de questões como gordura localizada e flacidez, conforme indicação e avaliação médica.</p></div></details>
 <details class="service"><summary><span>Abordagens Complementares</span></summary><div class="service-content"><p class="sub">Prática ortomolecular</p><p>Abordagem complementar ao cuidado médico, considerando aspectos nutricionais, metabólicos e bioquímicos.</p></div></details>
-<details class="service"><summary><span>GoldIncision</span></summary><div class="service-content"><p class="sub">Tratamento para celulite</p><p>O tratamento combina a ruptura das traves fibrosas com o estímulo de colágeno por bioestimulador.</p><p>A Dra. Natália Bandeira é licenciada para realizar a técnica. O planejamento é definido de forma individual, na avaliação médica.</p></div></details></div></section>
+<details class="service"><summary><span>GoldIncision</span></summary><div class="service-content"><p class="sub">Tratamento para celulite</p><p>O tratamento combina a ruptura das traves fibrosas com o estímulo de colágeno por bioestimulador.</p><p>A Dra. Natália Bandeira é licenciada para realizar a técnica. O planejamento é definido de forma individual, na avaliação médica.</p></div></details>
+<div class="consulta-formulario">
+  <h3 id="solicitar-consulta">Solicitar consulta</h3>
+  <p>Preencha seus dados para abrir o WhatsApp. Envie a mensagem por lá e aguarde a confirmação da equipe.</p>
+  <form aria-labelledby="solicitar-consulta">
+    <label>Seu nome
+      <input name="nome" autocomplete="name" required maxlength="100" pattern=".*\S.*">
+    </label>
+    <label>Dia de preferência (opcional)
+      <input type="date" name="dia">
+    </label>
+    <label>Período de preferência
+      <select name="periodo">
+        <option>Sem preferência</option>
+        <option>Manhã</option>
+        <option>Tarde</option>
+      </select>
+    </label>
+    <button class="button" type="submit">Continuar para o WhatsApp</button>
+  </form>
+  <noscript><p><a href="https://wa.me/5521977210359">Fale com a clínica pelo WhatsApp</a>.</p></noscript>
+</div>
+<script>
+(() => {
+  const form = document.querySelector('#servicos .consulta-formulario form');
+  const date = form.elements.namedItem('dia');
+  const today = new Date();
+  const localDay = new Date(today.getTime() - today.getTimezoneOffset() * 60000);
+  date.min = localDay.toISOString().slice(0, 10);
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = data.get('nome').trim();
+    const day = data.get('dia');
+    const lines = [
+      'Olá! Gostaria de solicitar uma consulta na Unora Clinic.',
+      'Nome: ' + name,
+      'Período: ' + data.get('periodo')
+    ];
+    if (day) lines.push('Dia de preferência: ' + day.split('-').reverse().join('/'));
+    const url = new URL('https://wa.me/5521977210359');
+    url.searchParams.set('text', lines.join('\n'));
+    window.location.assign(url.href);
+  });
+})();
+</script>
+</div></section>
 <section class="doctor" id="dra-natalia">
 <div class="doctor-profile">
 <img src="assets/dra-natalia.png" alt="Dra. Natália Bandeira" loading="lazy">
