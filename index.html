@@ -617,6 +617,83 @@ main .button {
 #agendamento .consulta-formulario input[type="date"]::-webkit-date-and-time-value { text-align: left; margin: 0; }
 #agendamento .consulta-preferencia > label { min-width: 0; }
 
+/* Topo: escolha do cuidado e animação de entrada */
+.hero-busca { margin-top: clamp(22px, 4vh, 34px); }
+.hero-busca-titulo {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--lightgold);
+}
+.hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.hero-chips button {
+  min-height: 38px;
+  padding: 8px 16px;
+  border: 1px solid #b78f5c80;
+  border-radius: 40px;
+  background: rgb(15 23 35 / 45%);
+  color: var(--text);
+  font-size: 13px;
+  letter-spacing: .02em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color .25s, color .25s, border-color .25s, transform .25s;
+}
+.hero-chips button:hover { border-color: var(--lightgold); transform: translateY(-2px); }
+.hero-chips button[aria-pressed="true"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--deep);
+}
+.hero-acao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 22px;
+  margin-top: 18px;
+}
+.hero-acao[hidden] { display: none; }
+.hero-acao .button { gap: 10px; padding: 12px 24px; }
+.hero-saiba {
+  font-size: 13px;
+  color: var(--lightgold);
+  border-bottom: 1px solid #b78f5c80;
+  padding-bottom: 2px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero > img { animation: hero-foto 2.6s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-inner > * { animation: hero-sobe .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-inner > h1 { animation-delay: .25s; }
+  .hero-inner > hr { animation-name: hero-linha; animation-delay: .55s; }
+  .hero-inner > p:nth-of-type(1) { animation-delay: .75s; }
+  .hero-inner > p:nth-of-type(2) { animation-delay: .9s; }
+  .hero-inner > .hero-busca { animation-delay: 1.1s; }
+  .hero-chips button { animation: hero-sobe .6s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-chips button:nth-child(1) { animation-delay: 1.25s; }
+  .hero-chips button:nth-child(2) { animation-delay: 1.33s; }
+  .hero-chips button:nth-child(3) { animation-delay: 1.41s; }
+  .hero-chips button:nth-child(4) { animation-delay: 1.49s; }
+  .hero-chips button:nth-child(5) { animation-delay: 1.57s; }
+  .hero-acao:not([hidden]) { animation: hero-sobe .45s ease-out both; }
+}
+@keyframes hero-foto { from { transform: scale(1.08); opacity: .4; } to { transform: scale(1); opacity: 1; } }
+@keyframes hero-sobe { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes hero-linha { from { opacity: 0; width: 0; } to { opacity: 1; width: 114px; } }
+@media (max-width: 700px) {
+  .hero { height: auto; min-height: 100svh; display: flex; align-items: flex-end; }
+  .hero-inner { position: relative; inset: auto; margin: 0 auto; padding: 96px 0 clamp(28px, 6vh, 56px); }
+  .hero-logo { width: min(72%, 300px); }
+  .hero hr { margin: 18px auto 16px; }
+  .hero-chips { gap: 6px; }
+  .hero-chips button { min-height: 36px; padding: 7px 13px; font-size: 12px; }
+  .hero-acao { flex-direction: column; gap: 12px; }
+  #inicio .hero-acao .button { width: auto; max-width: 100%; min-height: 44px; padding: 10px 22px; font-size: 14px; }
+  .hero-saiba { font-size: 12px; }
+}
+
 /* Mobile: nenhuma fonte acima de 15px */
 @media (max-width: 700px) {
   :root { --texto-titulo: 15px; }
@@ -626,7 +703,21 @@ main .button {
 }
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#agendamento">Agendamento</a></nav></header>
-<main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
+<main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p>
+<div class="hero-busca" role="group" aria-labelledby="hero-busca-titulo">
+  <span id="hero-busca-titulo" class="hero-busca-titulo">O que você busca hoje?</span>
+  <div class="hero-chips">
+    <button type="button" aria-pressed="false" data-servico="Saúde e Metabolismo">Metabolismo</button>
+    <button type="button" aria-pressed="false" data-servico="Saúde Hormonal">Hormônios</button>
+    <button type="button" aria-pressed="false" data-servico="Composição Corporal">Composição corporal</button>
+    <button type="button" aria-pressed="false" data-servico="Estética Corporal">Estética</button>
+    <button type="button" aria-pressed="false" data-servico="GoldIncision">Celulite</button>
+  </div>
+  <div class="hero-acao" hidden>
+    <a class="button hero-agendar" href="#agendamento">Agendar avaliação <span aria-hidden="true">→</span></a>
+    <a class="hero-saiba" href="#servicos">Conhecer o tratamento</a>
+  </div>
+</div></div></section>
 <section class="section" id="clinica"><div class="wrap intro"><img class="symbol" src="assets/simbolo.png" alt="Símbolo Unora" loading="lazy"><div><h2 class="sr-only">Clínica</h2><p>A Unora Clínica nasceu com a proposta de oferecer um cuidado médico que considera o corpo em sua complexidade.</p><p>Saúde metabólica, hormônios, composição corporal e estética estão relacionados e, por isso, são compreendidos de forma integrada dentro da clínica.</p><p>Essa visão reúne conhecimento médico e proximidade em uma experiência de cuidado atenta à história, às necessidades e ao momento de vida de cada paciente.</p><p>Mais do que reunir diferentes especialidades e procedimentos, a Unora busca construir uma relação em que medicina e cuidado caminham juntos, com atenção em cada etapa.</p></div></div></section>
 <section class="section services" id="servicos"><div class="wrap"><div class="section-head"><h2>Serviços da Unora</h2></div>
 <div class="service-cards">
@@ -772,4 +863,45 @@ main .button {
       <a href="https://www.instagram.com/alannedias.designer/">Designed by Alanne Dias Designer | Branding &amp; Web Design</a>
     </div>
   </div>
+<script>
+(() => {
+  const busca = document.querySelector('.hero-busca');
+  if (!busca) return;
+  const chips = busca.querySelectorAll('.hero-chips button');
+  const acao = busca.querySelector('.hero-acao');
+  const agendar = acao.querySelector('.hero-agendar');
+  const saiba = acao.querySelector('.hero-saiba');
+  let escolhido = null;
+
+  chips.forEach((chip) => chip.addEventListener('click', () => {
+    const jaAtivo = chip.getAttribute('aria-pressed') === 'true';
+    chips.forEach((c) => c.setAttribute('aria-pressed', 'false'));
+    escolhido = jaAtivo ? null : chip.dataset.servico;
+    chip.setAttribute('aria-pressed', String(!jaAtivo));
+    acao.hidden = !escolhido;
+    if (escolhido) agendar.firstChild.textContent = 'Agendar avaliação em ' + chip.textContent.toLowerCase() + ' ';
+  }));
+
+  agendar.addEventListener('click', (event) => {
+    if (!escolhido) return;
+    event.preventDefault();
+    document.querySelectorAll('#agendamento input[name="assunto"]').forEach((box) => {
+      box.checked = box.value === escolhido;
+    });
+    document.getElementById('agendamento').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const nome = document.querySelector('#agendamento input[name="nome"]');
+    if (nome) setTimeout(() => nome.focus({ preventScroll: true }), 700);
+  });
+
+  saiba.addEventListener('click', (event) => {
+    if (!escolhido) return;
+    const card = [...document.querySelectorAll('#servicos details.service')]
+      .find((d) => d.querySelector('summary').textContent.trim() === escolhido);
+    if (!card) return;
+    event.preventDefault();
+    card.open = true;
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+</script>
 </footer></body></html>
