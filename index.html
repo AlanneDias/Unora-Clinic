@@ -516,6 +516,36 @@ main .button {
   padding-block: 12px clamp(34px, 6vw, 54px);
 }
 #dra-natalia .doctor-bio p { color: var(--text); }
+
+.footer { text-align: left; }
+.footer-info {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: clamp(20px, 5vw, 50px);
+}
+.footer .footer-label {
+  font-size: var(--texto-leitura);
+  margin-bottom: 8px;
+}
+.footer-info p { margin: 0 0 8px; }
+.footer-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--texto-apoio);
+  line-height: 1.6;
+}
+.footer-info a { overflow-wrap: anywhere; }
+.footer-credit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+}
+.footer-credit a { margin-top: 0; }
+@media (max-width: 600px) {
+  .footer-info { grid-template-columns: 1fr; gap: 18px; }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -635,9 +665,30 @@ main .button {
 <iframe class="location-map" title="Mapa da UNORA Clinic, Rua Miguel de Frias, 206, Icaraí" src="https://maps.google.com/maps?q=Rua%20Miguel%20de%20Frias%2C%20206%2C%20Icara%C3%AD%2C%20Niter%C3%B3i%2C%20RJ&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 </section>
 </main>
-<footer class="footer"><div class="wrap">
-<p>Unora Clinic<br>Saúde Integrada, Endocrinologia, Nutrologia e Estética Avançada.</p>
-<p>Endereço: Rua Miguel de Frias, 206 — Sala 601, Icaraí — Niterói, RJ<br>Telefone: <a href="tel:+5521977210359">(21) 97721-0359</a><br>Email: <a href="mailto:unoraclinic@gmail.com">unoraclinic@gmail.com</a><br>Instagram: <a href="https://www.instagram.com/dranataliabandeira/">@dranataliabandeira</a></p>
-<p>Direção Técnica: Dra. Natália Bandeira<br>CRM-RJ 52112779-9</p>
-<div class="footer-credit">© 2026 Unora Clinic. Todos os direitos reservados.<br>Diretora Técnica: Dra. Natália Bandeira | CRM-RJ 52112779-9<br><a href="https://www.instagram.com/alannedias.designer/">Designed by Alanne Dias Designer | Branding &amp; Web Design</a></div>
-</div></footer></body></html>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-info">
+      <div>
+        <p class="footer-label">UNORA Clinic</p>
+        <p>Saúde Integrada, Endocrinologia, Nutrologia e Estética Avançada.</p>
+        <p><a href="#localizacao">Rua Miguel de Frias, 206 · Sala 601<br>Icaraí, Niterói — RJ</a></p>
+      </div>
+      <div>
+        <p class="footer-label">Contato</p>
+        <ul>
+          <li><a href="tel:+5521977210359">(21) 97721-0359</a></li>
+          <li><a href="mailto:unoraclinic@gmail.com">unoraclinic@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/dranataliabandeira/">@dranataliabandeira</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-label">Direção técnica</p>
+        <p><a href="#dra-natalia">Dra. Natália Bandeira</a><br>CRM-RJ 52112779-9</p>
+      </div>
+    </div>
+    <div class="footer-credit">
+      <span>© 2026 Unora Clinic. Todos os direitos reservados.</span>
+      <a href="https://www.instagram.com/alannedias.designer/">Designed by Alanne Dias Designer | Branding &amp; Web Design</a>
+    </div>
+  </div>
+</footer></body></html>
