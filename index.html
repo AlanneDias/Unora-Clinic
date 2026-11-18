@@ -435,6 +435,43 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Medidas compartilhadas de conteúdo e controles */
+:root {
+  --largura-conteudo: 1000px;
+  --margem-lateral: 5vw;
+  --raio-controle: 8px;
+  --altura-controle: 44px;
+  --espaco-controle: 16px;
+}
+#clinica .intro, #servicos .wrap, #avaliacoes .wrap,
+#agendamento > .wrap, .footer .wrap {
+  width: min(calc(100% - 2 * var(--margem-lateral)), var(--largura-conteudo));
+  margin-inline: auto;
+}
+#servicos .service-cards .service, .avaliacoes-grid figure {
+  border-radius: var(--raio-controle);
+}
+main .button, #agendamento .consulta-formulario input:not([type="checkbox"]),
+#agendamento .consulta-formulario select {
+  box-sizing: border-box;
+  min-height: var(--altura-controle);
+  border-radius: var(--raio-controle);
+  padding: 10px var(--espaco-controle);
+  font-size: var(--texto-leitura);
+  line-height: 1.45;
+}
+main .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#localizacao .address-card .button { padding: 10px var(--espaco-controle); }
+#agendamento .consulta-formulario form { gap: var(--espaco-controle); }
+#agendamento .consulta-formulario label { gap: 6px; }
+#agendamento .consulta-assuntos label { gap: 8px; }
+#agendamento .consulta-formulario button { max-width: 100%; }
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
