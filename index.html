@@ -572,6 +572,29 @@ main .button {
   background: var(--navy);
   color: var(--text);
 }
+
+#agendamento .consulta-assuntos input {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  background: var(--deep);
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  cursor: pointer;
+}
+#agendamento .consulta-assuntos input:checked::after {
+  content: "";
+  width: 5px;
+  height: 9px;
+  margin-top: -2px;
+  border: solid var(--lightgold);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+@media (forced-colors: active) {
+  #agendamento .consulta-assuntos input { appearance: auto; }
+  #agendamento .consulta-assuntos input::after { content: none; }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
