@@ -426,12 +426,14 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
     display: block;
     height: 100%;
     padding-bottom: 54px;
-    font-size: var(--texto-apoio);
+    padding-inline: 10px;
+    font-size: var(--texto-leitura);
+    hyphens: auto;
   }
   #servicos .service-cards .service:not([open]) summary::after {
     position: absolute;
     bottom: 14px;
-    left: 14px;
+    left: 10px;
     margin: 0;
   }
 }
@@ -449,7 +451,9 @@ header nav a, #dra-natalia .doctor-profile p, #dra-natalia .doctor-role,
 }
 #servicos .service-cards .service-content p {
   color: var(--text);
-  margin-bottom: 12px;
+  font-size: var(--texto-apoio);
+  line-height: 1.65;
+  margin-bottom: 10px;
 }
 #servicos .service-cards .service-content .sub {
   font-size: var(--texto-apoio);
