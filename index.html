@@ -598,6 +598,11 @@ main .button {
   #agendamento .consulta-assuntos input { appearance: auto; }
   #agendamento .consulta-assuntos input::after { content: none; }
 }
+
+/* Mobile: nenhuma fonte acima de 15px */
+@media (max-width: 700px) {
+  :root { --texto-titulo: 15px; }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
