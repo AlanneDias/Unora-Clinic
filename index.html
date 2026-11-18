@@ -794,7 +794,7 @@ header nav a:hover { color: #fff; }
     const day = data.get('dia');
     const topics = data.getAll('assunto');
     const period = data.get('periodo');
-    let message = 'Olá! Me chamo ' + name + ' e gostaria de consultar a disponibilidade de uma consulta';
+    let message = 'Olá! Vim da Home do site da Unora. Me chamo ' + name + ' e gostaria de marcar uma consulta';
     if (period !== 'Sem preferência') message += ' no período da ' + period.toLocaleLowerCase('pt-BR');
     if (day) message += (period === 'Sem preferência' ? ' no dia ' : ' do dia ') + day.split('-').reverse().join('/');
     if (topics.length) message += ' sobre ' + new Intl.ListFormat('pt-BR').format(topics);
