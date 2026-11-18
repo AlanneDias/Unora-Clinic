@@ -75,7 +75,7 @@ header nav a{display:grid;place-items:center;min-height:23px;padding:3px 0;font-
 #agendamento .consulta-formulario p{font-size:14px;margin-bottom:20px}
 #agendamento .consulta-formulario form{display:grid;gap:14px}
 #agendamento .consulta-formulario label{display:grid;gap:5px;font-size:14px}
-#agendamento .consulta-formulario input,#agendamento .consulta-formulario select{width:100%;min-height:44px;padding:8px 12px;border:1px solid #a9a5a0;border-radius:5px;background:#fffaf2;color:#182637;font:inherit}
+#agendamento .consulta-formulario input,#agendamento .consulta-formulario select{width:100%;min-height:44px;padding:8px 12px;border:1px solid rgb(219 203 188 / 48%);border-radius:5px;background:rgb(255 250 242 / 8%);color:var(--text);font:inherit}
 #agendamento .consulta-formulario button{justify-self:start;border:0;cursor:pointer;background:var(--gold);min-height:44px}
 #agendamento .consulta-formulario :focus-visible{outline:2px solid var(--lightgold);outline-offset:3px}
 
@@ -547,6 +547,12 @@ main .button {
 #agendamento .consulta-formulario button { margin-top: 4px; }
 @media (max-width: 480px) {
   #agendamento .consulta-preferencia { grid-template-columns: 1fr; }
+}
+
+#agendamento .consulta-formulario form { color-scheme: dark; }
+#agendamento .consulta-formulario select option {
+  background: var(--navy);
+  color: var(--text);
 }
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
