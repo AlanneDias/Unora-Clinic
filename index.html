@@ -154,7 +154,7 @@ header nav a {
   margin: 0;
 }
 #dra-natalia .doctor-profile p {
-  max-width: 35ch;
+  max-width: 100%;
   line-height: 1.4;
   margin: 0;
 }
@@ -210,6 +210,10 @@ header nav a {
 @media (max-width: 600px) {
   #localizacao .wrap { grid-template-columns: 1fr; }
 }
+#dra-natalia .doctor-role {
+  white-space: nowrap;
+  font-size: clamp(10px, 3.2vw, 13px);
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -226,7 +230,7 @@ header nav a {
 <div class="doctor-profile">
 <img src="assets/dra-natalia.png" alt="Dra. Natália Bandeira" loading="lazy">
 <h2>Dra. Natália Bandeira</h2>
-<p>Médica | Fundadora e Diretora Clínica da Unora<br>CRM-RJ 52112779-9</p>
+<p><span class="doctor-role">Médica | Fundadora e Diretora Clínica da Unora</span><br>CRM-RJ 52112779-9</p>
 <a class="instagram" href="https://www.instagram.com/dranataliabandeira/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Dra. Natália Bandeira"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.5"/><path d="M18 6h.01" stroke-linecap="round"/></svg></a>
 </div>
 <div class="doctor-bio"><div class="wrap">
