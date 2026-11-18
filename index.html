@@ -173,6 +173,42 @@ header nav a {
 #solicitar-consulta {
   scroll-margin-top: 20px;
 }
+
+/* Ritmo vertical e mapa */
+#clinica, #servicos { min-height: 0; padding-block: clamp(34px, 6vw, 62px); }
+#servicos h2 { margin-bottom: clamp(20px, 4vw, 40px); }
+#servicos .section-head { margin-bottom: 18px; }
+#servicos summary { min-height: 44px; padding-block: 12px; }
+#dra-natalia { padding-top: 24px; }
+#dra-natalia .doctor-bio { padding-block: clamp(30px, 5vw, 48px) 18px; }
+#agendamento { padding-block: clamp(32px, 6vw, 56px); }
+#agendamento h2 { margin-bottom: 22px; }
+#agendamento > .wrap > p { margin-bottom: 20px; }
+#agendamento .consulta-formulario { margin-top: 28px; }
+#localizacao { padding-block: clamp(34px, 6vw, 58px); }
+#localizacao .wrap {
+  display: grid;
+  grid-template-columns: minmax(180px, .35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(18px, 5vw, 54px);
+}
+#localizacao .address-card { justify-self: center; }
+#localizacao h2, #localizacao .address-card p { margin-bottom: 20px; }
+#localizacao .location-map {
+  display: block;
+  width: 100%;
+  height: clamp(245px, 35vw, 340px);
+  border: 1px solid #b78f5c80;
+  border-radius: 10px;
+}
+.faq { border-top-width: clamp(18px, 4vw, 42px); }
+.faq .wrap::before { margin-bottom: 8px; }
+.faq summary { min-height: 52px; }
+.footer { padding-top: clamp(30px, 6vw, 56px); }
+.footer-credit { margin-top: 28px; padding-top: 22px; }
+@media (max-width: 600px) {
+  #localizacao .wrap { grid-template-columns: 1fr; }
+}
 </style></head><body>
 <header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#dra-natalia">Dra Natália</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p></div></section>
@@ -252,7 +288,8 @@ header nav a {
 <h2>Como Chegar</h2>
 <p>Rua Miguel de Frias, 206<br>Sala 601<br>Icaraí - Niterói RJ</p>
 <a class="button" href="https://share.google/CITvTfryOmpvesD7T" target="_blank" rel="noopener noreferrer">Ver no Google Maps</a>
-</div></div>
+</div>
+<iframe class="location-map" title="Mapa da UNORA Clinic, Rua Miguel de Frias, 206, Icaraí" src="https://maps.google.com/maps?q=Rua%20Miguel%20de%20Frias%2C%20206%2C%20Icara%C3%AD%2C%20Niter%C3%B3i%2C%20RJ&amp;output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 </section>
 <section class="faq" aria-label="Perguntas frequentes"><div class="wrap">
 <details class="service"><summary>Por que escolher Unora e não outra clínica?</summary><div class="service-content"><p>A Unora integra saúde metabólica, hormônios, composição corporal e estética em um cuidado que considera a história e as necessidades de cada paciente.</p></div></details>
