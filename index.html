@@ -694,83 +694,6 @@ main .button {
   .hero-saiba { font-size: 12px; }
 }
 
-/* Menu em barra de vidro dourado */
-header {
-  left: 50%;
-  width: min(1160px, calc(100% - 32px));
-  max-width: none;
-  display: grid;
-  grid-template-columns: 44px 1fr 44px;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  border-radius: 18px;
-  background: rgb(219 178 123 / 86%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid rgb(240 214 170 / 55%);
-  box-shadow: inset 0 1px 0 rgb(255 240 215 / 35%), 0 8px 30px rgb(15 23 35 / 25%);
-  pointer-events: auto;
-}
-header nav {
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  gap: clamp(14px, 4vw, 44px);
-  color: var(--deep);
-}
-header nav a {
-  min-height: 36px;
-  font-size: 12px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  position: relative;
-}
-header nav a::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 6px;
-  height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transition: transform .25s ease;
-}
-header nav a:hover::after, header nav a:focus-visible::after { transform: scaleX(1); }
-.menu-marca, .menu-agendar {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  color: var(--deep);
-}
-.menu-marca img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  filter: brightness(0);
-  opacity: .88;
-}
-.menu-agendar svg {
-  width: 26px;
-  height: 26px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: transform .25s ease;
-}
-.menu-agendar:hover svg { transform: translateY(-2px); }
-@media (max-width: 700px) {
-  header { width: calc(100% - 24px); grid-template-columns: 36px 1fr 36px; gap: 6px; padding: 6px 8px; border-radius: 14px; }
-  header nav { gap: clamp(8px, 3.5vw, 18px); }
-  header nav a { font-size: 11px; letter-spacing: .04em; min-height: 32px; }
-  .menu-marca, .menu-agendar { width: 36px; height: 36px; }
-  .menu-marca img { width: 26px; height: 26px; }
-  .menu-agendar svg { width: 22px; height: 22px; }
-}
-
 /* Mobile: nenhuma fonte acima de 15px */
 @media (max-width: 700px) {
   :root { --texto-titulo: 15px; }
@@ -779,7 +702,7 @@ header nav a:hover::after, header nav a:focus-visible::after { transform: scaleX
   #agendamento h2, #localizacao h2 { font-size: 20px; }
 }
 </style></head><body>
-<header><a class="menu-marca" href="#inicio" aria-label="UNORA Clinic, voltar ao início"><img src="assets/simbolo.png" alt=""></a><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#agendamento">Agendamento</a></nav><a class="menu-agendar" href="#agendamento" aria-label="Agendar consulta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M9 14.5l2 2 4-4"/></svg></a></header>
+<header><nav aria-label="Navegação principal"><a href="#clinica">Clínica</a><a href="#servicos">Serviços</a><a href="#agendamento">Agendamento</a></nav></header>
 <main><section class="hero" id="inicio"><img src="assets/capa-idv-unora.jpg" alt="" fetchpriority="high"><div class="hero-inner"><h1><img class="hero-logo" src="assets/unora.png" alt="UNORA Clinic"></h1><hr><p>Na Unora, saúde, metabolismo e composição corporal são cuidados de forma integrada.</p><p>Um olhar médico que considera as diferentes dimensões da saúde e compreende cada paciente em sua individualidade.</p>
 <div class="hero-busca" role="group" aria-labelledby="hero-busca-titulo">
   <span id="hero-busca-titulo" class="hero-busca-titulo">O que você busca hoje?</span>
