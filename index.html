@@ -321,15 +321,13 @@ header nav a {
     const name = data.get('nome').trim();
     const day = data.get('dia');
     const topics = data.getAll('assunto');
-    const lines = [
-      'Olá! Gostaria de solicitar uma consulta na Unora Clinic.',
-      'Nome: ' + name,
-      'Período: ' + data.get('periodo')
-    ];
-    if (topics.length) lines.push('Assunto da consulta: ' + topics.join(', '));
-    if (day) lines.push('Dia de preferência: ' + day.split('-').reverse().join('/'));
+    const period = data.get('periodo');
+    let message = 'Olá! Me chamo ' + name + ' e gostaria de consultar a disponibilidade de uma consulta';
+    if (period !== 'Sem preferência') message += ' no período da ' + period.toLocaleLowerCase('pt-BR');
+    if (day) message += (period === 'Sem preferência' ? ' no dia ' : ' do dia ') + day.split('-').reverse().join('/');
+    if (topics.length) message += ' sobre ' + new Intl.ListFormat('pt-BR').format(topics);
     const url = new URL('https://wa.me/5521977210359');
-    url.searchParams.set('text', lines.join('\n'));
+    url.searchParams.set('text', message + '.');
     window.location.assign(url.href);
   });
 })();
